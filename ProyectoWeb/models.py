@@ -1,26 +1,17 @@
 from django.db import models
 
-
-# Modelo para la Marca del coche
 class Marca(models.Model):
     nom = models.CharField(max_length=100, verbose_name="Nombre de la marca")
 
     def __str__(self):
         return self.nom
 
-
-# Modelo para el Tipo del coche (por ejemplo: SUV, Berlina, etc.)
 class Tipo(models.Model):
     nom = models.CharField(max_length=100, verbose_name="Tipo de coche")
 
     def __str__(self):
         return self.nom
 
-
-# Nuevo modelo para el Motor, que incluye:
-# - Tipo de energía: Gasolina, Diésel o Eléctrico.
-# - Cilindrada: 1.5 L o 2.0 L.
-# - Caballos de potencia: 100, 150 o 200 HP.
 class Motor(models.Model):
     ENERGIA_CHOICES = [
         ('gasolina', 'Gasolina'),
