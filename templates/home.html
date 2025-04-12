@@ -9,8 +9,13 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h1>Lista de Coches</h1>
             <div>
-                <a class="btn btn-primary me-2" href="{% url 'login' %}">Iniciar Sesión</a>
-                <a class="btn btn-secondary" href="{% url 'register' %}">Registrarse</a>
+                {% if request.session.email %}
+                    <span class="me-2">Bienvenido, {{ request.session.email }}</span>
+                    <a class="btn btn-danger" href="{% url 'logout' %}">Cerrar Sesión</a>
+                {% else %}
+                    <a class="btn btn-primary me-2" href="{% url 'login' %}">Iniciar Sesión</a>
+                    <a class="btn btn-secondary" href="{% url 'register' %}">Registrarse</a>
+                {% endif %}
             </div>
         </div>
     </div>

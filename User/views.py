@@ -35,6 +35,8 @@ def signin(request):
         if passwords[emails.index(email)] == password:
             times = 0
             print('Usuario autenticado, devolviendo respuesta HTTP')
+            # Guardar el email en la sesión para indicar que el usuario inició sesión
+            request.session['email'] = email
             return redirect('home')
         else:
             print('Email != Contraseña, devolviendo respuesta HTTP')
@@ -110,3 +112,7 @@ def signup(request):
             'errorclass': 'alert alert-danger',
             'error': 'Lo sentimos. El nombre de usuario o el correo ya están en uso.'
         })
+
+def logout(request):
+    request.session.flush()
+    return redirect('home')

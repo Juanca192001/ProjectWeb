@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ProyectoWeb.views import home
-from User.views import login,signin, register, signup
+from User.views import login, signin, register, signup, logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,5 @@ urlpatterns = [
     path('login/signin/', signin, name='signin'),
     path('register/', register, name='register'),
     path('register/signup/', signup, name='signup'),
-
+    path('logout/', logout, name='logout'),
 ]
