@@ -93,4 +93,4 @@ class Model(models.Model):
     )
 
     def __str__(self):
-        return self.nom
+        return f"{self.marca} {self.modelo} ({self.tipo})"
