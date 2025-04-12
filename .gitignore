@@ -1,2 +1,4 @@
 .idea/workspace.xml
 .idea/workspace.xml
+db.sqlite3
+/DjangoProject/__pycache__
