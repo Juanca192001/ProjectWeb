@@ -12,17 +12,19 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Ruedas</th>
+                    <th>Motor</th>
                     <th>Interior</th>
                     <th>Color</th>
                 </tr>
             </thead>
             <tbody>
-                {% for coche in coches %}
+                {% for modelo in modelos %}
                 <tr>
-                    <td>{{ coche.nombre }}</td>
-                    <td>{{ coche.ruedas }}</td>
-                    <td>{{ coche.interior }}</td>
-                    <td>{{ coche.color }}</td>
+                    <td>{{ modelo.nom }}</td>
+                    <td>{{ modelo.roda }}</td>
+                    <td>{{ modelo.motor }}</td>
+                    <td>{{ modelo.interior }}</td>
+                    <td>{{ modelo.color }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

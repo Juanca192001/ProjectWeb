@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import Coche, Marca, Modelo
+from .models import Tipo, Marca, Model
 
 def home(request):
-    coches = Coche.objects.all()
+    tipos = Tipo.objects.all()
     marcas = Marca.objects.all()
-    modelos = Modelo.objects.all()
+    modelos = Model.objects.all()
     context = {
-        'coches': coches,
+        'coches': tipos,
         'marcas': marcas,
         'modelos': modelos
     }
