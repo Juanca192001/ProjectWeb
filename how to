@@ -1,0 +1,15 @@
+Construir la imagen
+
+
+docker-compose build
+Correr el contenedor
+
+
+docker-compose up
+Ejecutar migraciones dentro del contenedor
+
+
+docker-compose run web python app/manage.py migrate
+Crear superusuario
+
+docker-compose run web python app/manage.py createsuperuser
