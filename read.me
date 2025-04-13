@@ -1,0 +1,118 @@
+"Descripción del Proyecto
+Este proyecto consiste en una página web desarrollada para un concesionario de automóviles. La aplicación está construida utilizando Django, un framework de desarrollo web en Python, y actualmente incluye las funcionalidades básicas necesarias para gestionar usuarios y sesiones. Aunque el proyecto está en sus primeras etapas, ya hemos implementado las siguientes páginas y características:
+
+Home: Página principal del concesionario.
+
+Login: Permite a los usuarios iniciar sesión.
+
+Register: Permite a los nuevos usuarios registrarse en la plataforma.
+
+Logout: Opción para cerrar sesión de manera segura.
+
+Funcionalidades Implementadas
+1. Home
+La página principal actúa como el punto de entrada al sitio web del concesionario. Aquí se puede mostrar información general sobre el concesionario, como promociones, vehículos destacados o contacto básico.
+
+2. Login
+La funcionalidad de inicio de sesión permite que los usuarios registrados accedan a su cuenta. Esta página incluye:
+
+Un formulario con campos para el correo electrónico y la contraseña.
+
+Validación de credenciales para garantizar la seguridad.
+
+3. Register
+La página de registro permite a los nuevos usuarios crear una cuenta en la plataforma. Incluye:
+
+Un formulario con campos como nombre, correo electrónico y contraseña.
+
+Validación básica para evitar errores durante el registro.
+
+4. Logout
+Los usuarios pueden cerrar sesión desde cualquier parte del sitio web, garantizando que su información esté protegida cuando dejan de usar la plataforma.
+
+Estructura del Proyecto
+El proyecto está organizado en las siguientes carpetas y archivos principales:
+
+DjangoProject: Contiene la configuración general del proyecto Django.
+
+ProyectoWeb: Incluye las vistas y URLs relacionadas con las páginas principales (home, login, register).
+
+User: Maneja la lógica relacionada con los usuarios, como autenticación y gestión de sesiones.
+
+templates: Carpeta donde se almacenan los archivos HTML para las diferentes páginas (home, login, register).
+
+db.sqlite3: Base de datos SQLite utilizada para almacenar información de usuarios y sesiones.
+
+Dockerfile & docker-compose.yml: Archivos para configurar y ejecutar el proyecto en contenedores Docker.
+
+manage.py: Script principal para gestionar el proyecto Django.
+
+Instalación y Configuración
+Requisitos Previos
+Asegúrate de tener instalados:
+
+Python 3.12 o superior
+
+Django
+
+Docker
+
+Descripción del Proyecto
+Este proyecto consiste en una página web diseñada para un concesionario de automóviles. La aplicación permite a los usuarios explorar una lista de coches disponibles, iniciar sesión, registrarse y cerrar sesión. Actualmente, hemos implementado las funcionalidades básicas para gestionar usuarios y mostrar información sobre los vehículos.
+
+La interfaz es sencilla y moderna, con un diseño minimalista que incluye una tabla donde se muestran los detalles de los coches disponibles. Los usuarios pueden interactuar con la página mediante botones de navegación para iniciar sesión o registrarse.
+
+Funcionalidades Implementadas
+1. Home (Lista de Coches)
+La página principal muestra una tabla con información detallada sobre los coches disponibles en el concesionario. Los datos que se presentan incluyen:
+
+Nombre: Nombre del modelo del coche.
+
+Ruedas: Estilo o tipo de ruedas.
+
+Motor: Especificaciones del motor (tipo de combustible, capacidad y potencia).
+
+Interior: Material del interior del coche.
+
+Color: Color del coche, acompañado de un indicador visual.
+
+En la parte superior derecha, se encuentran dos botones:
+
+Iniciar Sesión: Redirige al formulario de inicio de sesión.
+
+Registrarse: Redirige al formulario para crear una nueva cuenta.
+
+2. Login
+La funcionalidad de inicio de sesión permite que los usuarios registrados accedan a su cuenta. Incluye:
+
+Un formulario con campos para el correo electrónico y la contraseña.
+
+Validación de credenciales para garantizar que solo usuarios autorizados puedan acceder.
+
+3. Register
+La página de registro permite a los nuevos usuarios crear una cuenta en la plataforma. Incluye:
+
+Un formulario con campos como nombre, correo electrónico y contraseña.
+
+Validación básica para evitar errores durante el registro.
+
+4. Logout
+Los usuarios pueden cerrar sesión desde cualquier parte del sitio web, garantizando que su información esté protegida cuando dejan de usar la plataforma.
+
+Diseño Visual
+La interfaz utiliza un esquema de colores oscuros con texto blanco para facilitar la lectura y ofrecer un diseño moderno. La tabla está bien estructurada, lo que permite a los usuarios visualizar rápidamente las especificaciones de cada coche. Los colores seleccionados para los vehículos se representan tanto en texto como en un cuadrado visual al lado del nombre del color.
+
+Estructura del Proyecto
+El proyecto está organizado en las siguientes carpetas y archivos principales:
+
+DjangoProject: Contiene la configuración general del proyecto Django.
+
+ProyectoWeb: Incluye las vistas y URLs relacionadas con las páginas principales (home, login, register).
+
+templates: Carpeta donde se almacenan los archivos HTML para las diferentes páginas (home, login, register).
+
+static: Archivos CSS y JS utilizados para el diseño visual.
+
+db.sqlite3: Base de datos SQLite utilizada para almacenar información de usuarios y sesiones.
+
+manage.py: Script principal para gestionar el proyecto Django."
