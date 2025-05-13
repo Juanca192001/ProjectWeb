@@ -11,4 +11,3 @@ def home(request):
         'modelos': modelos
     }
     return render(request, 'home.html', context)
-
