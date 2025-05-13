@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ProyectoWeb.views import home
+from ProyectoWeb.views import (
+    home, configuraTuVehiculo,
+    audi_config, seat_config, volkswagen_config, guardar_configuracion,
+)
+
 from User.views import login, signin, register, signup, logout
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +31,11 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('register/signup/', signup, name='signup'),
     path('logout/', logout, name='logout'),
+    path('configuraTuVehiculo/', configuraTuVehiculo, name='configuraTuVehiculo'),
+    path('configuraTuVehiculo/guardar/', guardar_configuracion, name='guardar_configuracion'),
+    path('configuraTuVehiculo/audi/', audi_config, name='configura_audi'),
+    path('configuraTuVehiculo/seat/', seat_config, name='configura_seat'),
+    path('configuraTuVehiculo/volkswagen/', volkswagen_config, name='configura_volkswagen'),
+
+
 ]

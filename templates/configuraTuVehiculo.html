@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Configura tu vehículo{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-color: #f1f3f5;
+  }
+
+  .brand-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .brand-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .brand-img {
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .brand-subtitle {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .brand-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .container {
+    padding: 40px 0;
+  }
+</style>
+
+<div class="container">
+  <h2 class="text-center mb-5">Elige una marca para empezar</h2>
+  <div class="row justify-content-center">
+
+    <!-- Audi -->
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'configura_audi' %}" class="brand-link">
+        <div class="brand-card">
+          <img src="https://static.vecteezy.com/system/resources/previews/019/136/343/large_2x/audi-logo-audi-icon-free-free-vector.jpg" class="img-fluid brand-img" alt="Audi">
+          <div class="brand-name">Audi</div>
+          <div class="brand-subtitle">Vehículos premium con diseño y tecnología de vanguardia</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- SEAT -->
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'configura_seat' %}" class="brand-link">
+        <div class="brand-card">
+          <img src="https://i0.wp.com/cdn.icon-icons.com/icons2/2402/PNG/512/seat_logo_icon_145774.png" class="img-fluid brand-img" alt="SEAT">
+          <div class="brand-name">SEAT</div>
+          <div class="brand-subtitle">Diseño joven, eficiencia y espíritu urbano</div>
+        </div>
+      </a>
+    </div>
+    <!-- Volkswagen -->
+    <div class="col-md-4 mb-4">
+      <a href="{% url 'configura_volkswagen' %}" class="brand-link">
+        <div class="brand-card">
+          <img src="https://logodownload.org/wp-content/uploads/2014/02/volkswagen-vw-logo-0.png" class="img-fluid brand-img" alt="Volkswagen">
+          <div class="brand-name">Volkswagen</div>
+          <div class="brand-subtitle">Innovación, calidad y confianza alemana</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
