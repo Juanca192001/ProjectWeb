@@ -10,7 +10,5 @@ def home(request):
         'marcas': marcas,
         'modelos': modelos
     }
-    return render(request, 'ProyectoWeb/home.html',context)
+    return render(request, 'home.html', context)
 
-def login_view(request):
-    return render(request, 'ProyectoWeb/login.html')
