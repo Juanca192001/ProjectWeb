@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Tipo, Marca, Model
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 def home(request):
     tipos = Tipo.objects.all()
@@ -22,9 +25,6 @@ def configuraTuVehiculo(request):
         'modelos': modelos
     }
     return render(request, 'configuraTuVehiculo.html', context)
-
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 def guardar_configuracion(request):
     if request.method == 'POST':
