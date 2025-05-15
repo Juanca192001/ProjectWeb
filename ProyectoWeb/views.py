@@ -12,3 +12,13 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
+def your_configurations(request):
+    tipos = Tipo.objects.all()
+    marcas = Marca.objects.all()
+    modelos = Model.objects.all()
+    context = {
+        'coches': tipos,
+        'marcas': marcas,
+        'modelos': modelos
+    }
+    return render(request, 'your_configurations.html', context)

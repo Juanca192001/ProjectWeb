@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tus Configuraciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    form {
+      margin-bottom: 30px;
+      border: 1px solid #ccc;
+      padding: 16px;
+      border-radius: 10px;
+      max-width: 400px;
+    }
+
+    .config-list {
+      margin-top: 20px;
+    }
+
+    .config card {
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .config-card button {
+      margin-right: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>TUS CONFIGURACIONES</h1>
+
+  <form id="configForm">
+    <label for="marca">Marca:</label>
+    <select id="marca" required>
+      <option value="">Seleccione una marca</option>
+      <option value="Toyota">Toyota</option>
+      <option value="Ford">Ford</option>
+      <option value="BMW">BMW</option>
+    </select>
+
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" required>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" required>
+
+    <label for="motor">Motor:</label>
+    <input type="text" id="motor" required>
+
+    <label for="accesorios">Accesorios (separados por coma):</label>
+    <input type="text" id="accesorios">
+
+    <button type="submit">Guardar Configuración</button>
+  </form>
+
+  <div class="config-list" id="configuracionesContainer"></div>
+
+  <script>
+    const configuraciones = [];
+    let editandoId = null;
+
+    document.getElementById('configForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const marca = document.getElementById('marca').value;
+      const modelo = document.getElementById('modelo').value;
+      const color = document.getElementById('color').value;
+      const motor = document.getElementById('motor').value;
+      const accesorios = document.getElementById('accesorios').value.split(',').map(a => a.trim());
+
+      if (editandoId !== null) {
+        const config = configuraciones.find(c => c.id === editandoId);
+        config.marca = marca;
+        config.modelo = modelo;
+        config.color = color;
+        config.motor = motor;
+        config.accesorios = accesorios;
+        editandoId = null;
+      } else {
+        configuraciones.push({
+          id: Date.now(),
+          marca,
+          modelo,
+          color,
+          motor,
+          accesorios
+        });
+      }
+
+      this.reset();
+      renderConfiguraciones();
+    });
+
+    function renderConfiguraciones() {
+      const container = document.getElementById('configuracionesContainer');
+      container.innerHTML = '';
+
+      configuraciones.forEach(config => {
+        const card = document.createElement('div');
+        card.className = 'config-card';
+        card.innerHTML = `
+          <h3>${config.marca} - ${config.modelo}</h3>
+          <p><strong>Color:</strong> ${config.color}</p>
+          <p><strong>Motor:</strong> ${config.motor}</p>
+          <p><strong>Accesorios:</strong> ${config.accesorios.join(', ')}</p>
+          <button onclick="editarConfiguracion(${config.id})">Editar</button>
+          <button onclick="eliminarConfiguracion(${config.id})">Eliminar</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function editarConfiguracion(id) {
+      const config = configuraciones.find(c => c.id === id);
+      document.getElementById('marca').value = config.marca;
+      document.getElementById('modelo').value = config.modelo;
+      document.getElementById('color').value = config.color;
+      document.getElementById('motor').value = config.motor;
+      document.getElementById('accesorios').value = config.accesorios.join(', ');
+      editandoId = id;
+      window.scrollTo(0, 0);
+    }
+
+    function eliminarConfiguracion(id) {
+      const confirmacion = confirm("¿Deseas eliminar esta configuración?");
+      if (confirmacion) {
+        const index = configuraciones.findIndex(c => c.id === id);
+        configuraciones.splice(index, 1);
+        renderConfiguraciones();
+      }
+    }
+  </script>
+
+</body>
+</html>
