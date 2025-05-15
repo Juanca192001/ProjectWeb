@@ -1,51 +1,86 @@
 from django.db import models
 
+
 class Marca(models.Model):
     nom = models.CharField(max_length=100, verbose_name="Nombre de la marca")
 
     def __str__(self):
         return self.nom
 
+
 class Tipo(models.Model):
-    nom = models.CharField(max_length=100, verbose_name="Tipo de coche")
+    tipo_id = models.IntegerField(
+        primary_key=True,
+        verbose_name="Id tipo de coche"
+    )
+
+    nom = models.CharField(
+        max_length=100,
+        verbose_name="Tipo de coche"
+    )
+
+    portes = models.IntegerField(
+        verbose_name="Portes"
+    )
+
+    asientos = models.IntegerField(
+        verbose_name="Asientos"
+    )
+
+    largada = models.IntegerField(
+        verbose_name="Largada"
+    )
+
+    alto = models.IntegerField(
+        verbose_name="Alto"
+    )
+
+    ancho = models.IntegerField(
+        verbose_name="Ancho"
+    )
+
+    capacidad = models.IntegerField(
+        verbose_name="Capacidad"
+    )
 
     def __str__(self):
         return self.nom
 
+
 class Motor(models.Model):
-    ENERGIA_CHOICES = [
-        ('gasolina', 'Gasolina'),
-        ('diesel', 'Diésel'),
-    ]
-    energia = models.CharField(
-        max_length=20,
-        choices=ENERGIA_CHOICES,
-        verbose_name="Tipo de energía"
+
+    nombre = models.CharField(
+        max_length=50,
+        verbose_name="Nombre del motor"
     )
 
-    CILINDRADA_CHOICES = [
-        ('1.5', '1.5 L'),
-        ('2.0', '2.0 L'),
-    ]
+    descripcion = models.CharField(
+        max_length=100,
+        verbose_name="Descripcion del motor"
+    )
+
+    tipo = models.CharField(
+        max_length=30,
+        verbose_name="Tipo de motor"
+    )
+
+    combustible = models.CharField(
+        max_length=30,
+        verbose_name="Combustible"
+    )
+
     cilindrada = models.CharField(
-        max_length=3,
-        choices=CILINDRADA_CHOICES,
+        max_length=10,
         verbose_name="Cilindrada"
     )
 
-    POTENCIA_CHOICES = [
-        ('100', '100 CV'),
-        ('150', '150 CV'),
-        ('200', '200 CV'),
-    ]
     potencia = models.CharField(
-        max_length=3,
-        choices=POTENCIA_CHOICES,
+        max_length=10,
         verbose_name="Caballos de potencia"
     )
 
     def __str__(self):
-        return f"{self.energia.capitalize()}, {self.cilindrada}L, {self.potencia}CV"
+        return f"{self.nombre}, {self.descripcion}, {self.tipo}"
 
 
 class Model(models.Model):

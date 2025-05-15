@@ -1,11 +1,13 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import resolve
+from django.utils.text import normalize_newlines
+
+from ProyectoWeb.utils.carapi import obtener_modelos_por_marca
 import json
 times = 0
 
 def login(request):
     global times
-    print('¡Página de inicio de sesión abierta!')
     times += 1
     if request.path == '/login/signin/':
         report_loc = '../signin/'
@@ -14,15 +16,12 @@ def login(request):
     return render(request, 'login.html', {'loc': report_loc, 'error': ''})
 
 def signin(request):
-    print('¡Solicitud de inicio de sesión realizada!')
-    print('Leyendo datos desde JSON')
     json2 = open('user_data.json',)
     data = json.load(json2)
     l1 = data['u_data'][0]
     emails = list(l1.keys())
     passwords = list(l1.values())
     json2.close()
-    print('Datos leídos desde JSON')
     global times
     times = times + 1
     if request.path == '/login/signin/':
@@ -34,19 +33,16 @@ def signin(request):
     if email in emails:
         if passwords[emails.index(email)] == password:
             times = 0
-            print('Usuario autenticado, devolviendo respuesta HTTP')
             # Guardar el email en la sesión para indicar que el usuario inició sesión
             request.session['email'] = email
             return redirect('home')
         else:
-            print('Email != Contraseña, devolviendo respuesta HTTP')
             return render(request, 'login.html', {
                 'loc': report_loc,
                 'errorclass': 'alert alert-danger',
                 'error': 'Lo sentimos. El email y la contraseña no coinciden.'
             })
     else:
-        print('La cuenta no existe, devolviendo respuesta HTTP')
         return render(request, 'login.html', {
             'loc': report_loc,
             'errorclass': 'alert alert-danger',
@@ -55,11 +51,8 @@ def signin(request):
 
 def register(request):
     global times
-    print('¡Página de registro abierta!')
     times += 1
     current_url = request.path
-    print(current_url)
-    print(0)
     if request.path == '/register/signup/':
         report_loc = '../signup/'
     else:
@@ -67,8 +60,6 @@ def register(request):
     return render(request, 'register.html', {'loc': report_loc, 'error': ''})
 
 def signup(request):
-    print('¡Solicitud de registro realizada!')
-    print('Leyendo datos desde JSON')
     if request.path == '/register/signup/':
         report_loc = '../signup/'
     else:
@@ -79,7 +70,6 @@ def signup(request):
     emails = list(l1.keys())
     passwords = list(l1.values())
     json2.close()
-    print('Datos leídos desde JSON')
     email = request.POST['email']
     password = request.POST['password']
     password1 = request.POST['password1']
@@ -116,3 +106,13 @@ def signup(request):
 def logout(request):
     request.session.flush()
     return redirect('home')
+
+def listar_marcas(request):
+    marcas_data = obtener_marcas()
+    return render(request,'marcas.html',{'marcas': marcas_data})
+
+def listar_modelos(request):
+    modelos_audi = obtener_modelos_por_marca('audi')
+    modelos_bmw = obtener_modelos_por_marca('bmw')
+    modelos_volkswagen = obtener_modelos_por_marca('volkswagen')
+    return None

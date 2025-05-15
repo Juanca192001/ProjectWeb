@@ -122,3 +122,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CARAPI_TOKEN = "91aaea41-eb67-4488-875a-d80b747a52b1"
+CARAPI_SECRET = "99ae9116ed92b2d5c437f814c1f39eb5"
