@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.urls import resolve
+from ProyectoWeb.models import Tipo, Marca, Model
 import json
 times = 0
 
@@ -116,3 +116,14 @@ def signup(request):
 def logout(request):
     request.session.flush()
     return redirect('home')
+
+def your_configurations(request):
+    tipos = Tipo.objects.all()
+    marcas = Marca.objects.all()
+    modelos = Model.objects.all()
+    context = {
+        'coches': tipos,
+        'marcas': marcas,
+        'modelos': modelos
+    }
+    return render(request, 'your_configurations.html', context)
