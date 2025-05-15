@@ -70,10 +70,6 @@ def obtener_tipos(marca):
                 'nom': tipo_data['type'],
                 'portes': tipo_data['doors'],
                 'asientos': tipo_data['seats'],
-                'largada': tipo_data['length'],
-                'alto': tipo_data['height'],
-                'ancho': tipo_data['width'],
-                'capacidad': tipo_data['cargo_capacity'],
             }
             tipos_list.append(tipo)
     return tipos_list

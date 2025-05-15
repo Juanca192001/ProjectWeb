@@ -27,22 +27,6 @@ class Tipo(models.Model):
         verbose_name="Asientos"
     )
 
-    largada = models.IntegerField(
-        verbose_name="Largada"
-    )
-
-    alto = models.IntegerField(
-        verbose_name="Alto"
-    )
-
-    ancho = models.IntegerField(
-        verbose_name="Ancho"
-    )
-
-    capacidad = models.IntegerField(
-        verbose_name="Capacidad"
-    )
-
     def __str__(self):
         return self.nom
 
