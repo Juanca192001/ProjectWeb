@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Mis Configuraciones{% endblock %}
+
+{% block content %}
+
+<ul>
+  {% for conf in configuraciones %}
+    <li>
+      {{ conf.nombre_personalizado }} - {{ conf.modelo.nombre }}
+      <a href="{% url 'editar_configuracion' conf.pk %}">Editar</a>
+      <a href="{% url 'borrar_configuracion' conf.pk %}">Borrar</a>
+    </li>
+  {% empty %}
+    <li>No tienes configuraciones todavía.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

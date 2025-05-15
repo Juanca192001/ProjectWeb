@@ -1,11 +1,14 @@
-from django.shortcuts import render, HttpResponse, redirect
-from django.urls import resolve
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
 import json
+
+from ProyectoWeb.forms import ConfiguracionForm
+from ProyectoWeb.models import Configuracion
+
 times = 0
 
 def login(request):
     global times
-    print('¡Página de inicio de sesión abierta!')
     times += 1
     if request.path == '/login/signin/':
         report_loc = '../signin/'
@@ -14,8 +17,6 @@ def login(request):
     return render(request, 'login.html', {'loc': report_loc, 'error': ''})
 
 def signin(request):
-    print('¡Solicitud de inicio de sesión realizada!')
-    print('Leyendo datos desde JSON')
     json2 = open('user_data.json',)
     data = json.load(json2)
     l1 = data['u_data'][0]
@@ -34,19 +35,16 @@ def signin(request):
     if email in emails:
         if passwords[emails.index(email)] == password:
             times = 0
-            print('Usuario autenticado, devolviendo respuesta HTTP')
             # Guardar el email en la sesión para indicar que el usuario inició sesión
             request.session['email'] = email
             return redirect('home')
         else:
-            print('Email != Contraseña, devolviendo respuesta HTTP')
             return render(request, 'login.html', {
                 'loc': report_loc,
                 'errorclass': 'alert alert-danger',
                 'error': 'Lo sentimos. El email y la contraseña no coinciden.'
             })
     else:
-        print('La cuenta no existe, devolviendo respuesta HTTP')
         return render(request, 'login.html', {
             'loc': report_loc,
             'errorclass': 'alert alert-danger',
@@ -55,7 +53,6 @@ def signin(request):
 
 def register(request):
     global times
-    print('¡Página de registro abierta!')
     times += 1
     current_url = request.path
     print(current_url)
@@ -67,8 +64,6 @@ def register(request):
     return render(request, 'register.html', {'loc': report_loc, 'error': ''})
 
 def signup(request):
-    print('¡Solicitud de registro realizada!')
-    print('Leyendo datos desde JSON')
     if request.path == '/register/signup/':
         report_loc = '../signup/'
     else:
@@ -79,7 +74,6 @@ def signup(request):
     emails = list(l1.keys())
     passwords = list(l1.values())
     json2.close()
-    print('Datos leídos desde JSON')
     email = request.POST['email']
     password = request.POST['password']
     password1 = request.POST['password1']
@@ -96,17 +90,14 @@ def signup(request):
             a.write(json_object)
             a.close()
             times = 0
-            print('Nuevo usuario registrado, devolviendo respuesta HTTP')
             return redirect('login')
         else:
-            print('Las contraseñas no coinciden, devolviendo respuesta HTTP')
             return render(request, 'register.html', {
                 'loc': report_loc,
                 'errorclass': 'alert alert-danger',
                 'error': 'Lo sentimos. Las contraseñas no coinciden.'
             })
     else:
-        print('El nombre de usuario o el correo ya están en uso, devolviendo respuesta HTTP')
         return render(request, 'register.html', {
             'loc': report_loc,
             'errorclass': 'alert alert-danger',
@@ -116,3 +107,28 @@ def signup(request):
 def logout(request):
     request.session.flush()
     return redirect('home')
+
+@login_required
+def mis_configuraciones(request):
+    configuraciones = Configuracion.objects.filter(usuario=request.user)
+    return render(request, 'mis_configuraciones.html', {'configuraciones': configuraciones})
+
+@login_required
+def editar_configuracion(request, pk):
+    configuracion = get_object_or_404(Configuracion, pk=pk, usuario=request.user)
+    if request.method == 'POST':
+        form = ConfiguracionForm(request.POST, instance=configuracion)
+        if form.is_valid():
+            form.save()
+            return redirect('mis_configuraciones')
+    else:
+        form = ConfiguracionForm(instance=configuracion)
+    return render(request, 'editar_configuracion.html', {'form': form})
+
+@login_required
+def borrar_configuracion(request, pk):
+    configuracion = get_object_or_404(Configuracion, pk=pk, usuario=request.user)
+    if request.method == 'POST':
+        configuracion.delete()
+        return redirect('mis_configuraciones')
+    return render(request, 'confirmar_borrado.html', {'configuracion': configuracion})

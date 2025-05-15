@@ -20,8 +20,7 @@ from ProyectoWeb.views import (
     audi_config, seat_config, volkswagen_config, guardar_configuracion,
 )
 
-from User.views import login, signin, register, signup, logout
-
+from User.views import login, signin, register, signup, logout, mis_configuraciones, editar_configuracion, borrar_configuracion
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,6 +35,9 @@ urlpatterns = [
     path('configuraTuVehiculo/audi/', audi_config, name='configura_audi'),
     path('configuraTuVehiculo/seat/', seat_config, name='configura_seat'),
     path('configuraTuVehiculo/volkswagen/', volkswagen_config, name='configura_volkswagen'),
+    path('mis-configuraciones/', mis_configuraciones, name='mis_configuraciones'),
+    path('editar-configuracion/<int:pk>/', editar_configuracion, name='editar_configuracion'),
+    path('borrar-configuracion/<int:pk>/', borrar_configuracion, name='borrar_configuracion'),
 
 
 ]
