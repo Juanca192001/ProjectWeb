@@ -41,11 +41,18 @@ def guardar_configuracion(request):
         return HttpResponseRedirect(reverse('home'))
 
     return HttpResponseRedirect(reverse('configuraTuVehiculo'))
-def audi_config(request):
-    return render(request, 'configura_audi.html')
 
-def seat_config(request):
-    return render(request, 'configura_seat.html')
+def audi_models(request):
+    return render(request, 'audiModels.html')
 
-def volkswagen_config(request):
-    return render(request, 'configura_volkswagen.html')
+def volkswagen_models(request):
+    return render(request, 'volkswagenModels.html')
+
+def bmw_models(request):
+    return render(request, 'bmwModels.html')
+
+def configurar_model(request, marca, modelo):
+    return render(request, 'configurarModel.html', {
+        'marca': marca,
+        'modelo': modelo
+    })

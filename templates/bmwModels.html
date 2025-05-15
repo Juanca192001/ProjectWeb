@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}Configura Audi{% endblock %}
+
+{% block content %}
+{% load static %}
+  <style>
+  h1 {
+    text-align: center;
+    margin-bottom: 2%;
+  }
+    .model-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .model-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      transition: transform 0.3s ease;
+      margin-bottom: 3%;
+    }
+
+    .model-card:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+
+    .model-card img {
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .model-card {
+      text-decoration: none;
+    }
+
+    .model-card h2 {
+      text-decoration: none;
+    }
+    .model-card:link,
+    .model-card:visited,
+    .model-card:hover,
+    .model-card:active {
+      text-decoration: none;
+      color: inherit;
+    }
+
+  </style>
+<body>
+
+<h1>Berlinas disponibles</h1>
+
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='bmw' modelo='3 series' %}" class="model-card">
+    <img src="https://cdn.motor1.com/images/mgl/W6ZP6/s3/audi-a3-sportback.jpg" alt="Audi A3">
+    <h2>Serie 3</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='5 series' %}" class="model-card">
+    <img src="https://cdn.motor1.com/images/mgl/0ANWZ/s3/2021-audi-q5-facelift.jpg" alt="Audi Q5">
+    <h2>Serie 5</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='7 series' %}" class="model-card">
+    <img src="https://cdn.motor1.com/images/mgl/gWWxJ/s3/2023-audi-a6-e-tron-concept.jpg" alt="Audi A6">
+    <h2>Serie 7</h2>
+  </a>
+</div>
+
+<h1>SUV disponibles</h1>
+
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='audi' modelo='a3' %}" class="model-card">
+    <img src="https://cdn.motor1.com/images/mgl/W6ZP6/s3/audi-a3-sportback.jpg" alt="Audi A3">
+    <h2>Audi A3</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='audi' modelo='q5' %}" class="model-card">
+    <img src="https://cdn.motor1.com/images/mgl/0ANWZ/s3/2021-audi-q5-facelift.jpg" alt="Audi Q5">
+    <h2>Audi Q5</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='audi' modelo='a6' %}" class="model-card">
+    <img src="https://cdn.motor1.com/images/mgl/gWWxJ/s3/2023-audi-a6-e-tron-concept.jpg" alt="Audi A6">
+    <h2>Audi A6</h2>
+  </a>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

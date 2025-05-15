@@ -67,13 +67,14 @@
     <div class="top-bar">
         <h1 class="pl-4">Nombre de la Empresa</h1>
         <div class="auth-buttons pr-4">
-            {% if request.session.email %}
-                <span>Hola, {{ request.session.email }}</span>
-                <a href="{% url 'logout' %}">Cerrar sesión</a>
+            {% if user.is_authenticated %}
+              <span>Bienvenido, {{ user.username }}!</span>
+              <a href="{% url 'logout' %}" class="btn btn-outline-light ml-2">Cerrar sesión</a>
             {% else %}
-                <a href="{% url 'login' %}">Iniciar Sesión</a>
-                <a href="{% url 'register' %}">Registrarse</a>
+              <a href="{% url 'login' %}" class="btn btn-outline-light mr-2">Iniciar Sesión</a>
+              <a href="{% url 'register' %}" class="btn btn-light">Registrarse</a>
             {% endif %}
+
         </div>
     </div>
 
