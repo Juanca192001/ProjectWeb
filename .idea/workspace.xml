@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a83bdb2-0104-413e-903b-585aabd9f49a" name="Changes" comment="sesió usari amb django">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2025_21_13_[Changes]/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2025_21_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2025_21_13__Changes_.xml" beforeDir="false" />
+    <list default="true" id="2a83bdb2-0104-413e-903b-585aabd9f49a" name="Changes" comment="Models de configuració amb imatges, falta audi">
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi TTs coupe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a5 coupe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi q3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi q5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi s5 coupe.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bmwModels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bmwModels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/configura_audi.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/configura_seat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/volkswagenModels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/volkswagenModels.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/audiModels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/audiModels.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +127,7 @@
       <workItem from="1747218208708" duration="12823000" />
       <workItem from="1747325262180" duration="9782000" />
       <workItem from="1747348015902" duration="3081000" />
-      <workItem from="1747415623901" duration="3124000" />
+      <workItem from="1747415623901" duration="6982000" />
     </task>
     <task id="LOCAL-00001" summary="Nou home">
       <option name="closed" value="true" />
@@ -192,7 +193,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747350537872</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Models de configuració amb imatges, falta audi">
+      <option name="closed" value="true" />
+      <created>1747420704585</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747420704585</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Models de configuració amb imatges, falta audi">
+      <option name="closed" value="true" />
+      <created>1747420779206</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747420779206</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +233,7 @@
     <MESSAGE value="Actualitzat" />
     <MESSAGE value="Base. html actualitzat color fondo" />
     <MESSAGE value="sesió usari amb django" />
-    <option name="LAST_COMMIT_MESSAGE" value="sesió usari amb django" />
+    <MESSAGE value="Models de configuració amb imatges, falta audi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Models de configuració amb imatges, falta audi" />
   </component>
 </project>
