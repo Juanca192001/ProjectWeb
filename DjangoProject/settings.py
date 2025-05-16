@@ -38,11 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ProyectoWeb.apps.ProyectowebConfig',
-    'ProyectoWeb.models.Configuracion',
-    'ProyectoWeb.models.Marca',
-    'ProyectoWeb.models.Tipo',
-    'ProyectoWeb.models.Motor',
-    'ProyectoWeb.models.Model',
 ]
 
 MIDDLEWARE = [

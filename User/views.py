@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
@@ -65,12 +65,10 @@ def logout(request):
     auth_logout(request)
     return redirect('home')
 
-@login_required
 def mis_configuraciones(request):
     configuraciones = Configuracion.objects.filter(usuario=request.user)
     return render(request, 'mis_configuraciones.html', {'configuraciones': configuraciones})
 
-@login_required
 def editar_configuracion(request, pk):
     configuracion = get_object_or_404(Configuracion, pk=pk, usuario=request.user)
     if request.method == 'POST':
@@ -82,7 +80,6 @@ def editar_configuracion(request, pk):
         form = ConfiguracionForm(instance=configuracion)
     return render(request, 'editar_configuracion.html', {'form': form})
 
-@login_required
 def borrar_configuracion(request, pk):
     configuracion = get_object_or_404(Configuracion, pk=pk, usuario=request.user)
     if request.method == 'POST':

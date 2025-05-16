@@ -97,7 +97,7 @@ class Model(models.Model):
         return f"{self.marca} {self.nom} ({self.tipo})"
 
 class Configuracion(models.Model):
-    usuario = models.ForeignKey(User)
-    modelo = models.ForeignKey(Model)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    modelo = models.ForeignKey(Model, on_delete=models.CASCADE)
     nombre_personalizado = models.CharField(max_length=100, blank=True, null=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
