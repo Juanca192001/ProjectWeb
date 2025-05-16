@@ -15,26 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ProyectoWeb.views import (
-    home, configuraTuVehiculo,
-    audi_config, seat_config, volkswagen_config, guardar_configuracion,
-)
+from ProyectoWeb.views import home, configuraTuVehiculo, guardar_configuracion, audi_models, volkswagen_models, bmw_models, configurar_model
+from User.views import login, register, logout, mis_configuraciones, editar_configuracion, borrar_configuracion
 
-from User.views import login, signin, register, signup, logout, mis_configuraciones, editar_configuracion, borrar_configuracion
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('login/', login, name='login'),
-    path('login/signin/', signin, name='signin'),
     path('register/', register, name='register'),
-    path('register/signup/', signup, name='signup'),
     path('logout/', logout, name='logout'),
     path('configuraTuVehiculo/', configuraTuVehiculo, name='configuraTuVehiculo'),
     path('configuraTuVehiculo/guardar/', guardar_configuracion, name='guardar_configuracion'),
-    path('configuraTuVehiculo/audi/', audi_config, name='configura_audi'),
-    path('configuraTuVehiculo/seat/', seat_config, name='configura_seat'),
-    path('configuraTuVehiculo/volkswagen/', volkswagen_config, name='configura_volkswagen'),
+    path('configuraTuVehiculo/audi/', audi_models, name='audiModels'),
+    path('configuraTuVehiculo/<str:marca>/<str:modelo>/', configurar_model, name='configurarModel'),
+    path('configuraTuVehiculo/bmw/', bmw_models, name='bmwModels'),
+    path('configuraTuVehiculo/volkswagen/', volkswagen_models, name='volkswagenModels'),
     path('mis-configuraciones/', mis_configuraciones, name='mis_configuraciones'),
     path('editar-configuracion/<int:pk>/', editar_configuracion, name='editar_configuracion'),
     path('borrar-configuracion/<int:pk>/', borrar_configuracion, name='borrar_configuracion'),

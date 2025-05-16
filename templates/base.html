@@ -9,6 +9,7 @@
         body {
             margin: 0;
             padding: 0;
+            background-color: #f1f3f5;
         }
 
         .header-wrapper {
@@ -54,20 +55,21 @@
             font-weight: bold;
         }
 
-        .container-content {
-            padding: 40px;
+        .disabled-link {
+            pointer-events: none;
+            color: #cccccc !important;
         }
     </style>
-
 </head>
 <body>
+
 <!-- Barra superior -->
 <div class="header-wrapper">
     <div class="top-bar">
         <h1 class="pl-4">Nombre de la Empresa</h1>
         <div class="auth-buttons pr-4">
-            {% if request.session.email %}
-                <span>Hola, {{ request.session.email }}</span>
+            {% if user.is_authenticated %}
+                <span>Bienvenido, {{ user.username }}!</span>
                 <a href="{% url 'logout' %}">Cerrar sesión</a>
             {% else %}
                 <a href="{% url 'login' %}">Iniciar Sesión</a>
@@ -76,16 +78,27 @@
         </div>
     </div>
 
+    <!-- Barra de navegació -->
     <div class="nav-bar">
         <div class="nav-links">
-            <a href="{% url 'home' %}">Inicio</a>
-            <a href="{% url 'configuraTuVehiculo' %}">Configura tu vehículo</a>
-            <a href="{% url 'mis_configuraciones' %}">Tus Configuraciones</a>
+            <a href="{% url 'home' %}" class="text-white">Inicio</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'configuraTuVehiculo' %}" class="text-white">Configura tu vehículo</a>
+                <a href="{% url 'mis_configuraciones' %}" class="text-white">Tus Configuraciones</a>
+            {% else %}
+                <a href="#" class="disabled-link">
+                    Configura tu vehículo <span class="text-muted">(debes iniciar sesión)</span>
+                </a>
+                <a href="#" class="disabled-link">
+                    Tus Configuraciones <span class="text-muted">(debes iniciar sesión)</span>
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>
 
-<!-- Contingut -->
+<!-- Contingut principal -->
 <div class="container-content">
     {% block content %}
     {% endblock %}

@@ -4,61 +4,93 @@
 
 {% block content %}
 <style>
+    .section-wrapper {
+        margin: 4% 5%; /* 4% superior/inferior, 5% esquerra/dreta */
+    }
+
     .section {
         display: flex;
         align-items: center;
-        gap: 20px;
-        margin-bottom: 40px;
+        gap: 2.5%;
+        margin-bottom: 4%;
     }
+
     .section:nth-child(odd) {
         flex-direction: row-reverse;
     }
+
     .section img {
         max-width: 50%;
         height: auto;
         border-radius: 8px;
     }
+
     .section .text {
         flex: 1;
     }
+
     .section h2 {
-        font-size: 30px;
-        margin-bottom: 15px;
+        font-size: 2vw;
+        margin-bottom: 1.5%;
     }
+
     .section p {
-        font-size: 19px;
+        font-size: 1.1vw;
         line-height: 1.7;
         text-align: justify;
     }
+
+    @media (max-width: 768px) {
+        .section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .section img {
+            max-width: 90%;
+        }
+
+        .section h2 {
+            font-size: 20px;
+        }
+
+        .section p {
+            font-size: 16px;
+        }
+    }
 </style>
 
-<div class="section">
-    <div class="text">
-        <h2>Tu concesionario oficial de confianza</h2>
-        <p>
-            En nuestra empresa encontrarás mucho más que una simple exposición de vehículos. Nos enorgullece ser concesionario oficial de algunas de las marcas más reconocidas a nivel nacional e internacional, lo que significa que cada modelo que ofrecemos cumple con los más altos estándares de calidad, seguridad y eficiencia. Contamos con un equipo de profesionales con años de experiencia en el sector, dispuestos a asesorarte en cada paso del proceso, desde la elección del vehículo hasta la entrega final.
-        </p>
-    </div>
-    <img src="https://cdn.motor1.com/images/mgl/pOqmJ/s1/2019-audi-q3-first-drive.jpg" alt="Imagen 1">
-</div>
+<div class="section-wrapper">
 
-<div class="section">
-    <div class="text">
-        <h2>Modelos para todos los gustos y necesidades</h2>
-        <p>
-            Sabemos que cada persona tiene un estilo de vida diferente, por eso ofrecemos una amplia gama de modelos que se adaptan a cualquier perfil. Desde coches compactos perfectos para la ciudad, hasta vehículos familiares con gran capacidad y confort, pasando por modelos deportivos, híbridos y eléctricos de última generación.
-        </p>
+    <div class="section">
+        <div class="text">
+            <h2>Tu concesionario oficial de confianza</h2>
+            <p>
+                En nuestra empresa encontrarás mucho más que una simple exposición de vehículos. Nos enorgullece ser concesionario oficial de algunas de las marcas más reconocidas a nivel nacional e internacional, lo que significa que cada modelo que ofrecemos cumple con los más altos estándares de calidad, seguridad y eficiencia. Contamos con un equipo de profesionales con años de experiencia en el sector, dispuestos a asesorarte en cada paso del proceso, desde la elección del vehículo hasta la entrega final.
+            </p>
+        </div>
+        <img src="https://cdn.motor1.com/images/mgl/pOqmJ/s1/2019-audi-q3-first-drive.jpg" alt="Imagen 1">
     </div>
-    <img src="https://www.autodato.com/wp-content/uploads/2020/03/SEAT-Leon-2020.jpg.webp" alt="Imagen 2">
-</div>
 
-<div class="section">
-    <div class="text">
-        <h2>Seguridad, garantía y compromiso</h2>
-        <p>
-            Ser concesionario oficial nos permite garantizar no solo la calidad de los vehículos que vendemos, sino también un servicio posventa de primer nivel. Todos nuestros coches cuentan con garantía oficial del fabricante, revisiones técnicas completas y la posibilidad de contratar planes de mantenimiento personalizados. Nuestro compromiso con el cliente no termina con la venta: queremos acompañarte durante toda la vida útil de tu vehículo.
-        </p>
+    <div class="section">
+        <div class="text">
+            <h2>Modelos para todos los gustos y necesidades</h2>
+            <p>
+                Sabemos que cada persona tiene un estilo de vida diferente, por eso ofrecemos una amplia gama de modelos que se adaptan a cualquier perfil. Desde coches compactos perfectos para la ciudad, hasta vehículos familiares con gran capacidad y confort, pasando por modelos deportivos, híbridos y eléctricos de última generación.
+            </p>
+        </div>
+        <img src="https://www.autodato.com/wp-content/uploads/2020/03/SEAT-Leon-2020.jpg.webp" alt="Imagen 2">
     </div>
-    <img src="https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/1-volkswagen-golf-2020-fd-hero-front.jpg" alt="Imagen 3">
+
+    <div class="section">
+        <div class="text">
+            <h2>Seguridad, garantía y compromiso</h2>
+            <p>
+                Ser concesionario oficial nos permite garantizar no solo la calidad de los vehículos que vendemos, sino también un servicio posventa de primer nivel. Todos nuestros coches cuentan con garantía oficial del fabricante, revisiones técnicas completas y la posibilidad de contratar planes de mantenimiento personalizados. Nuestro compromiso con el cliente no termina con la venta: queremos acompañarte durante toda la vida útil de tu vehículo.
+            </p>
+        </div>
+        <img src="https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/1-volkswagen-golf-2020-fd-hero-front.jpg" alt="Imagen 3">
+    </div>
+
 </div>
 {% endblock %}
