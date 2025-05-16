@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a83bdb2-0104-413e-903b-585aabd9f49a" name="Changes" comment="Models de configuració amb imatges, falta audi">
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi TTs coupe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a5 coupe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi q3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi q5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/imagenes/audi s5 coupe.png" afterDir="false" />
+    <list default="true" id="2a83bdb2-0104-413e-903b-585aabd9f49a" name="Changes" comment="Editar configuració i borrar arreglat esteticament">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/audiModels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/audiModels.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Configuraciones" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -63,7 +62,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#3 on Login&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -128,6 +127,7 @@
       <workItem from="1747325262180" duration="9782000" />
       <workItem from="1747348015902" duration="3081000" />
       <workItem from="1747415623901" duration="6982000" />
+      <workItem from="1747431431639" duration="730000" />
     </task>
     <task id="LOCAL-00001" summary="Nou home">
       <option name="closed" value="true" />
@@ -209,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747420779206</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Editar configuració i borrar arreglat esteticament">
+      <option name="closed" value="true" />
+      <created>1747430374090</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747430374090</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +242,7 @@
     <MESSAGE value="Base. html actualitzat color fondo" />
     <MESSAGE value="sesió usari amb django" />
     <MESSAGE value="Models de configuració amb imatges, falta audi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Models de configuració amb imatges, falta audi" />
+    <MESSAGE value="Editar configuració i borrar arreglat esteticament" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editar configuració i borrar arreglat esteticament" />
   </component>
 </project>
