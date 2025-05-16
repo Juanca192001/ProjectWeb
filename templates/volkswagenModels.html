@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Configura Volkswagen{% endblock %}
+
+{% block content %}
+{% load static %}
+<style>
+  h1 {
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+
+  .model-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .model-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease;
+    margin-bottom: 2%;
+  }
+
+  .model-card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  .model-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 160px;
+    object-fit: contain;
+  }
+
+  .model-card h2 {
+    text-decoration: none;
+  }
+
+  .model-card:link,
+  .model-card:visited,
+  .model-card:hover,
+  .model-card:active {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<body>
+
+<h1>Berlinas disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='volkswagen' modelo='jetta' %}" class="model-card">
+    <img src="{% static 'imagenes/jetta.png' %}" alt="jetta">
+    <h2>Jetta</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='volkswagen' modelo='passat' %}" class="model-card">
+    <img src="{% static 'imagenes/passat.png' %}" alt="5 passat">
+    <h2>Passat</h2>
+  </a>
+</div>
+
+<h1>SUV disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='volkswagen' modelo='tiguan' %}" class="model-card">
+    <img src="{% static 'imagenes/tiguan.png' %}" alt="tiguan">
+    <h2>Tiguan</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='volkswagen' modelo='touareg' %}" class="model-card">
+    <img src="{% static 'imagenes/Touareg.png' %}" alt="touareg">
+    <h2>Touareg</h2>
+  </a>
+</div>
+
+<h1>Compactos disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='volkswagen' modelo='golf' %}" class="model-card">
+    <img src="{% static 'imagenes/golf.png' %}" alt="golf">
+    <h2>Golf</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='volkswagen' modelo='beetle' %}" class="model-card">
+    <img src="{% static 'imagenes/beetle.png' %}" alt="beetle">
+    <h2>Beetle</h2>
+  </a>
+</div>
+
+</body>
+{% endblock %}

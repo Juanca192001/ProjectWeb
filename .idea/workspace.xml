@@ -1,39 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a83bdb2-0104-413e-903b-585aabd9f49a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/DjangoProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2a83bdb2-0104-413e-903b-585aabd9f49a" name="Changes" comment="Models de configuració amb imatges, falta audi">
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi TTs coupe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a5 coupe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi a8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi q3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi q5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imagenes/audi s5 coupe.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/audiModels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/audiModels.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;EliasBalcells&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Juanca192001/ProjectWeb.git&quot;,
+    &quot;accountId&quot;: &quot;62277ceb-8b42-4366-a8af-7ea0ecdc8631&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2vOZVi2qYGdd4ZrGek0MHRgL3Ro" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.DjangoProject.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#3 on Login&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python projects\ProjectWeb\static" />
+      <recent name="D:\Python projects\ProjectWeb\templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="DjangoProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="DjangoProject" />
@@ -42,6 +86,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="DjangoProject.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -63,8 +108,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
-        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
@@ -77,10 +122,118 @@
       <option name="presentableId" value="Default" />
       <updated>1744018106416</updated>
       <workItem from="1744018107292" duration="418000" />
+      <workItem from="1747128955729" duration="4746000" />
+      <workItem from="1747142096881" duration="10737000" />
+      <workItem from="1747218208708" duration="12823000" />
+      <workItem from="1747325262180" duration="9782000" />
+      <workItem from="1747348015902" duration="3081000" />
+      <workItem from="1747415623901" duration="6982000" />
     </task>
+    <task id="LOCAL-00001" summary="Nou home">
+      <option name="closed" value="true" />
+      <created>1747151272642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747151272642</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Login i register millorat amb text per moures d'un a l'altre">
+      <option name="closed" value="true" />
+      <created>1747153329438</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747153329438</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Millora de home per a futura creació de templates a traves d'una base, i creació de configuraTuVehiculo.html i les seves extencions.">
+      <option name="closed" value="true" />
+      <created>1747159971080</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747159971080</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Actualitzat">
+      <option name="closed" value="true" />
+      <created>1747233384552</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747233384552</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Actualitzat">
+      <option name="closed" value="true" />
+      <created>1747235746993</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747235746993</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Base. html actualitzat color fondo">
+      <option name="closed" value="true" />
+      <created>1747328498763</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747328498763</updated>
+    </task>
+    <task id="LOCAL-00007" summary="sesió usari amb django">
+      <option name="closed" value="true" />
+      <created>1747334886127</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747334886127</updated>
+    </task>
+    <task id="LOCAL-00008" summary="sesió usari amb django">
+      <option name="closed" value="true" />
+      <created>1747350537872</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747350537872</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Models de configuració amb imatges, falta audi">
+      <option name="closed" value="true" />
+      <created>1747420704585</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747420704585</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Models de configuració amb imatges, falta audi">
+      <option name="closed" value="true" />
+      <created>1747420779206</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747420779206</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Nou home" />
+    <MESSAGE value="Login i register millorat amb text per moures d'un a l'altre" />
+    <MESSAGE value="Millora de home per a futura creació de templates a traves d'una base, i creació de configuraTuVehiculo.html i les seves extencions." />
+    <MESSAGE value="Actualitzat" />
+    <MESSAGE value="Base. html actualitzat color fondo" />
+    <MESSAGE value="sesió usari amb django" />
+    <MESSAGE value="Models de configuració amb imatges, falta audi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Models de configuració amb imatges, falta audi" />
   </component>
 </project>

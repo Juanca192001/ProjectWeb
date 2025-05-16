@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}Configura Audi{% endblock %}
+
+{% block content %}
+{% load static %}
+<style>
+  h1 {
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+
+  .model-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .model-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease;
+    margin-bottom: 2%;
+  }
+
+  .model-card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  .model-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 160px;
+    object-fit: contain;
+  }
+
+  .model-card h2 {
+    text-decoration: none;
+  }
+
+  .model-card:link,
+  .model-card:visited,
+  .model-card:hover,
+  .model-card:active {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<body>
+
+<h1>Berlinas disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='audi' modelo='A5' %}" class="model-card">
+    <img src="{% static 'imagenes/audi a5.png' %}" alt="A5">
+    <h2>A5</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='audi' modelo='A7' %}" class="model-card">
+    <img src="{% static 'imagenes/audi a7.png' %}" alt="A7">
+    <h2>A7</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='audi' modelo='A8' %}" class="model-card">
+    <img src="{% static 'imagenes/audi a8.png' %}" alt="A8">
+    <h2>A8</h2>
+  </a>
+</div>
+
+<h1>SUV disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='audi' modelo='Q3' %}" class="model-card">
+    <img src="{% static 'imagenes/audi q3.png' %}" alt="Q3">
+    <h2>Q3</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='audi' modelo='Q5' %}" class="model-card">
+    <img src="{% static 'imagenes/audi q5.png' %}" alt="Q5">
+    <h2>Q5</h2>
+  </a>
+</div>
+
+<h1>Coupé disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='audi' modelo='A5' %}" class="model-card">
+    <img src="{% static 'imagenes/audi a5 coupe.png' %}" alt="A5">
+    <h2>A5 Coupé</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='audi' modelo='S5' %}" class="model-card">
+    <img src="{% static 'imagenes/audi s5 coupe.png' %}" alt="S5">
+    <h2>S5 coupé</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='audi' modelo='TTS' %}" class="model-card">
+    <img src="{% static 'imagenes/audi TTs coupe.png' %}" alt="TTS">
+    <h2>TTS coupé</h2>
+  </a>
+</div>
+
+</body>
+{% endblock %}

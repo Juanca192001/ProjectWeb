@@ -1,0 +1,6 @@
+<h2>¿Estás seguro que quieres borrar "{{ configuracion.nombre_personalizado }}"?</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sí, borrar</button>
+  <a href="{% url 'mis_configuraciones' %}">Cancelar</a>
+</form>

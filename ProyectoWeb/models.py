@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Marca(models.Model):
@@ -94,3 +95,9 @@ class Model(models.Model):
 
     def __str__(self):
         return f"{self.marca} {self.nom} ({self.tipo})"
+
+class Configuracion(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    modelo = models.ForeignKey(Model, on_delete=models.CASCADE)
+    nombre_personalizado = models.CharField(max_length=100, blank=True, null=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)

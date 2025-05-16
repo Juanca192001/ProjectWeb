@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Configura BMW{% endblock %}
+
+{% block content %}
+{% load static %}
+<style>
+  h1 {
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+
+  .model-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .model-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease;
+    margin-bottom: 2%;
+  }
+
+  .model-card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  .model-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 160px;
+    object-fit: contain;
+  }
+
+  .model-card h2 {
+    text-decoration: none;
+  }
+
+  .model-card:link,
+  .model-card:visited,
+  .model-card:hover,
+  .model-card:active {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<body>
+
+<h1>Berlinas disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='bmw' modelo='3 series' %}" class="model-card">
+    <img src="{% static 'imagenes/3 series.png' %}" alt="3 series">
+    <h2>Serie 3</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='5 series' %}" class="model-card">
+    <img src="{% static 'imagenes/5 series.png' %}" alt="5 series">
+    <h2>Serie 5</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='7 series' %}" class="model-card">
+    <img src="{% static 'imagenes/7 series.png' %}" alt="7 series">
+    <h2>Serie 7</h2>
+  </a>
+</div>
+
+<h1>SUV disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='bmw' modelo='X3' %}" class="model-card">
+    <img src="{% static 'imagenes/X3.png' %}" alt="X3">
+    <h2>X3</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='X5' %}" class="model-card">
+    <img src="{% static 'imagenes/X5.png' %}" alt="X5">
+    <h2>X5</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='X6' %}" class="model-card">
+    <img src="{% static 'imagenes/X6.png' %}" alt="X6">
+    <h2>X6</h2>
+  </a>
+</div>
+
+<h1>Coupé disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='bmw' modelo='2 series coupe' %}" class="model-card">
+    <img src="{% static 'imagenes/2 series coupe.png' %}" alt="2 series coupe">
+    <h2>Serie 2 coupé</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='4 series coupe' %}" class="model-card">
+    <img src="{% static 'imagenes/4 series coupe.png' %}" alt="4 series coupe">
+    <h2>Serie 4 coupé</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='6 series coupe' %}" class="model-card">
+    <img src="{% static 'imagenes/6 series coupe.png' %}" alt="6 series coupe">
+    <h2>Serie 6 coupé</h2>
+  </a>
+</div>
+
+</body>
+{% endblock %}

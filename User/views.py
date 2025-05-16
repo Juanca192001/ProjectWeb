@@ -1,118 +1,88 @@
-from django.shortcuts import render, HttpResponse, redirect
-from django.urls import resolve
-import json
-times = 0
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
+from ProyectoWeb.forms import ConfiguracionForm
+from ProyectoWeb.models import Configuracion
 
 def login(request):
-    global times
-    print('¡Página de inicio de sesión abierta!')
-    times += 1
-    if request.path == '/login/signin/':
-        report_loc = '../signin/'
-    else:
-        report_loc = 'signin/'
-    return render(request, 'login.html', {'loc': report_loc, 'error': ''})
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
 
-def signin(request):
-    print('¡Solicitud de inicio de sesión realizada!')
-    print('Leyendo datos desde JSON')
-    json2 = open('user_data.json',)
-    data = json.load(json2)
-    l1 = data['u_data'][0]
-    emails = list(l1.keys())
-    passwords = list(l1.values())
-    json2.close()
-    print('Datos leídos desde JSON')
-    global times
-    times = times + 1
-    if request.path == '/login/signin/':
-        report_loc = '../signin/'
-    else:
-        report_loc = 'signin/'
-    email = request.POST['email']
-    password = request.POST['password']
-    if email in emails:
-        if passwords[emails.index(email)] == password:
-            times = 0
-            print('Usuario autenticado, devolviendo respuesta HTTP')
-            # Guardar el email en la sesión para indicar que el usuario inició sesión
-            request.session['email'] = email
+        # Buscar usuario por email
+        try:
+            user_obj = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return render(request, 'login.html', {
+                'errorclass': 'alert alert-danger',
+                'error': 'Este usuario no existe.'
+            })
+
+        # Autenticar por username (porque `authenticate` usa username, no email)
+        user = authenticate(request, username=user_obj.username, password=password)
+
+        if user is not None:
+            auth_login(request, user)  # 🔐 Login automático
             return redirect('home')
         else:
-            print('Email != Contraseña, devolviendo respuesta HTTP')
             return render(request, 'login.html', {
-                'loc': report_loc,
                 'errorclass': 'alert alert-danger',
-                'error': 'Lo sentimos. El email y la contraseña no coinciden.'
+                'error': 'La contraseña es incorrecta.'
             })
-    else:
-        print('La cuenta no existe, devolviendo respuesta HTTP')
-        return render(request, 'login.html', {
-            'loc': report_loc,
-            'errorclass': 'alert alert-danger',
-            'error': 'Lo sentimos. La cuenta no existe. ¡Considere registrarse!'
-        })
 
+    return render(request, 'login.html', {'error': ''})
 def register(request):
-    global times
-    print('¡Página de registro abierta!')
-    times += 1
-    current_url = request.path
-    print(current_url)
-    print(0)
-    if request.path == '/register/signup/':
-        report_loc = '../signup/'
-    else:
-        report_loc = 'signup/'
-    return render(request, 'register.html', {'loc': report_loc, 'error': ''})
+    print('Página de registro abierta')
+    if request.method == 'POST':
+        username = request.POST.get('name')  # ← Asegúrate de que coincide con el "name" del input
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        password1 = request.POST.get('password1')
 
-def signup(request):
-    print('¡Solicitud de registro realizada!')
-    print('Leyendo datos desde JSON')
-    if request.path == '/register/signup/':
-        report_loc = '../signup/'
-    else:
-        report_loc = 'signup/'
-    json2 = open('user_data.json',)
-    data = json.load(json2)
-    l1 = data['u_data'][0]
-    emails = list(l1.keys())
-    passwords = list(l1.values())
-    json2.close()
-    print('Datos leídos desde JSON')
-    email = request.POST['email']
-    password = request.POST['password']
-    password1 = request.POST['password1']
-    usernames = []
-    if email not in emails:
-        if password == password1:
-            emails.append(email)
-            passwords.append(password)
-            d4 = {emails[len(emails)-1]: passwords[len(emails)-1]}
-            for x in range(len(emails)-1):
-                d4 = dict(list(d4.items()) + list({emails[x]: passwords[x]}.items()))
-            json_object = '{"u_data": [' + json.dumps(d4, indent=4) + ']}'
-            a = open('user_data.json', 'w')
-            a.write(json_object)
-            a.close()
-            times = 0
-            print('Nuevo usuario registrado, devolviendo respuesta HTTP')
-            return redirect('login')
-        else:
-            print('Las contraseñas no coinciden, devolviendo respuesta HTTP')
+        if password != password1:
             return render(request, 'register.html', {
-                'loc': report_loc,
                 'errorclass': 'alert alert-danger',
                 'error': 'Lo sentimos. Las contraseñas no coinciden.'
             })
-    else:
-        print('El nombre de usuario o el correo ya están en uso, devolviendo respuesta HTTP')
-        return render(request, 'register.html', {
-            'loc': report_loc,
-            'errorclass': 'alert alert-danger',
-            'error': 'Lo sentimos. El nombre de usuario o el correo ya están en uso.'
-        })
+
+        if User.objects.filter(username=username).exists() or User.objects.filter(email=email).exists():
+            return render(request, 'register.html', {
+                'errorclass': 'alert alert-danger',
+                'error': 'El nombre de usuario o el correo ya están en uso.'
+            })
+
+        User.objects.create(
+            username=username,
+            email=email,
+            password=make_password(password)
+        )
+        return redirect('login')
+
+    return render(request, 'register.html', {'error': ''})
 
 def logout(request):
-    request.session.flush()
+    auth_logout(request)
     return redirect('home')
+
+def mis_configuraciones(request):
+    configuraciones = Configuracion.objects.filter(usuario=request.user)
+    return render(request, 'mis_configuraciones.html', {'configuraciones': configuraciones})
+
+def editar_configuracion(request, pk):
+    configuracion = get_object_or_404(Configuracion, pk=pk, usuario=request.user)
+    if request.method == 'POST':
+        form = ConfiguracionForm(request.POST, instance=configuracion)
+        if form.is_valid():
+            form.save()
+            return redirect('mis_configuraciones')
+    else:
+        form = ConfiguracionForm(instance=configuracion)
+    return render(request, 'editar_configuracion.html', {'form': form})
+
+def borrar_configuracion(request, pk):
+    configuracion = get_object_or_404(Configuracion, pk=pk, usuario=request.user)
+    if request.method == 'POST':
+        configuracion.delete()
+        return redirect('mis_configuraciones')
+    return render(request, 'confirmar_borrado.html', {'configuracion': configuracion})
