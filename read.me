@@ -121,7 +121,11 @@ manage.py: Script principal para gestionar el proyecto Django."
 Lamentablemente la cofiguración no ha sido 100% correcta."
 
 
-Parte del readme deliverable 2: Implementacion de las pestañas de configura tu vehiculo (personalizacion del vehiculo que desees y este disponible) y de Tus configuraciones 
+
+--------------------------------------------------------------------------PARTE 2----------------------------------------------------------------------------------------------------
+
+Parte del readme deliverable 2:
+Implementación de las pestañas de Configura tu vehículo (personalización del vehículo que desees y esté disponible) y de Tus configuraciones
 (configuraciones ya realizadas por el usuario al haber iniciado sesión y haber guardado dicha configuración).
 
 📋 Descripción
@@ -131,33 +135,60 @@ Configura tu Vehículo
 
 Tus Configuraciones
 
-Breve correcion del login y del registrer  (antes se logeaba el usuario con el correo ahora ya no, se logea segun el nombre de usuario que este haya puesta inicialmente).
+Breve corrección del login y del register (antes se logueaba el usuario con el correo, ahora se sigue usando el correo, pero validando los datos contra la base de datos de Django).
 
-Estas secciones permiten a los usuarios diseñar su vehículo ideal y revisar o modificar las configuraciones previamente guardadas e incluso eliminarlas siempre y cuando hayas iniciado sesion.
+Estas secciones permiten a los usuarios diseñar su vehículo ideal y revisar o modificar las configuraciones previamente guardadas, e incluso eliminarlas, siempre y cuando hayas iniciado sesión.
 
 🧩 Funcionalidades Implementadas
 
 🔧 Configura tu Vehículo
-Primera seleccion del tipo de marca (3 a escoger dentro de ellas modelos (SUV, Berline o Coupé)
+Primera selección del tipo de marca (3 a escoger)
 
-Selección de modelo, color, tipo de motor y accesorios (llantas, color del interior....).
+En el caso de Audi y BMW, los modelos disponibles son SUV, Berlina y Coupé.
+En el caso de Volkswagen, el modelo Coupé se reemplaza por Compactos.
 
-Visualización en tiempo real de los cambios seleccionados.
+Selección de modelo, color, tipo de motor y accesorios (llantas de 16,17 y 18 pulgadas, color del interior personalizable...).
 
 Validación de las opciones disponibles según el modelo elegido.
 
 Botón para guardar la configuración.
 
 📂 Tus Configuraciones
-Lista de configuraciones previamente guardadas por el usuario por el nombre ya elegido por parte del usuario.
+Lista de configuraciones previamente guardadas por el usuario, por el nombre ya elegido por parte del usuario.
 
 Opción para editar o eliminar configuraciones.
 
-Acyualizacion de dicha configuraciçon
+Actualización de dicha configuración.
 
 🛠️ Tecnologías Utilizadas
 (Personaliza esta sección con tu stack real)
 
 Frontend: HTML, CSS, JavaScript.
+API: CarAPI.
 
-API: CarAPI. 
+🔐 Cambios Técnicos Relevantes
+
+📧 Inicio de sesión con correo y base de datos de Django
+Anteriormente, el inicio de sesión (login) se realizaba validando directamente el correo electrónico de forma local o mediante otro sistema externo. Como parte de esta práctica, se mantuvo el uso del correo como método de autenticación, pero ahora se usa validando los datos contra la base de datos de Django.
+
+Esto significa que:
+
+Los usuarios y sus configuraciones personalizadas ahora se gestionan desde el sistema de usuarios de Django.
+
+Las credenciales (correo y contraseña) se validan contra los datos almacenados en la base de datos del proyecto Django.
+
+Se mejora la seguridad, escalabilidad y mantenibilidad de la autenticación.
+
+Permite relacionar fácilmente cada configuración de vehículo con un usuario registrado.
+
+Este cambio sienta las bases para futuras funcionalidades como:
+
+Gestión de sesiones de usuario.
+
+Recuperación de configuraciones en diferentes dispositivos.
+
+Personalización persistente y segura.
+
+
+
+
