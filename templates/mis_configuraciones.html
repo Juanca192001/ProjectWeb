@@ -3,17 +3,79 @@
 {% block title %}Mis Configuraciones{% endblock %}
 
 {% block content %}
+<style>
+  .config-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    padding: 25px 20px;
+    text-align: center;
+    height: 100%;
+  }
 
-<ul>
-  {% for conf in configuraciones %}
-    <li>
-      {{ conf.nombre_personalizado }} - {{ conf.modelo.nombre }}
-      <a href="{% url 'editar_configuracion' conf.pk %}">Editar</a>
-      <a href="{% url 'borrar_configuracion' conf.pk %}">Borrar</a>
-    </li>
-  {% empty %}
-    <li>No tienes configuraciones todavía.</li>
-  {% endfor %}
-</ul>
+  .config-card:hover {
+    transform: translateY(-5px);
+  }
 
+  .config-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .config-model {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .config-buttons a {
+    margin: 5px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+  }
+
+  .btn-edit {
+    background-color: #007bff;
+  }
+
+  .btn-delete {
+    background-color: #dc3545;
+  }
+
+  .btn-edit:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-delete:hover {
+    background-color: #a71d2a;
+  }
+</style>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-5">Mis Configuraciones</h2>
+
+  {% if configuraciones %}
+    <div class="row">
+      {% for conf in configuraciones %}
+        <div class="col-md-4 mb-4">
+          <div class="config-card">
+            <div class="config-title">{{ conf.nombre_personalizado }}</div>
+            <div class="config-model">{{ conf.modelo.nombre }}</div>
+            <div class="config-buttons">
+              <a href="{% url 'editar_configuracion' conf.pk %}" class="btn-edit">Editar</a>
+              <a href="{% url 'borrar_configuracion' conf.pk %}" class="btn-delete">Borrar</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center">No tienes configuraciones todavía.</p>
+  {% endif %}
+</div>
 {% endblock %}

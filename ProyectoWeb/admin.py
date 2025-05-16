@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Marca, Model, Tipo, Motor
+from .models import Marca, Model, Tipo, Motor, Configuracion
 
 
 @admin.register(Marca)
@@ -19,4 +19,9 @@ class TipoAdmin(admin.ModelAdmin):
 class MotorAdmin(admin.ModelAdmin):
     list_display = ('energia', 'cilindrada', 'potencia')
     list_filter = ('energia',)
+
+@admin.register(Configuracion)
+class ConfiguracionAdmin(admin.ModelAdmin):
+        list_display = ('usuario', 'modelo', 'nombre_personalizado', 'fecha_creacion')
+        search_fields = ('usuario__username', 'nombre_personalizado')
 
