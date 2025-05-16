@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a83bdb2-0104-413e-903b-585aabd9f49a" name="Changes" comment="sesió usari amb django">
-      <change afterPath="$PROJECT_DIR$/templates/configurarModel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2025_21_13_[Changes]/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2025_21_13_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_04_2025_21_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bmwModels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bmwModels.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/configura_audi.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/configura_seat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/volkswagenModels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/volkswagenModels.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +125,8 @@
       <workItem from="1747142096881" duration="10737000" />
       <workItem from="1747218208708" duration="12823000" />
       <workItem from="1747325262180" duration="9782000" />
-      <workItem from="1747348015902" duration="1747000" />
+      <workItem from="1747348015902" duration="3081000" />
+      <workItem from="1747415623901" duration="3124000" />
     </task>
     <task id="LOCAL-00001" summary="Nou home">
       <option name="closed" value="true" />
@@ -188,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747334886127</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="sesió usari amb django">
+      <option name="closed" value="true" />
+      <created>1747350537872</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747350537872</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
