@@ -1,6 +1,64 @@
-<h2>¿Estás seguro que quieres borrar "{{ configuracion.nombre_personalizado }}"?</h2>
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">Sí, borrar</button>
-  <a href="{% url 'mis_configuraciones' %}">Cancelar</a>
-</form>
+{% extends 'base.html' %}
+{% block title %}Confirmar borrado{% endblock %}
+
+{% block content %}
+<style>
+  .confirm-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .confirm-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .confirm-container form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .confirm-container button,
+  .confirm-container a {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .confirm-container button {
+    background-color: #cc0000;
+    color: white;
+  }
+
+  .confirm-container a {
+    background-color: #ccc;
+    color: #000;
+  }
+
+  .confirm-container button:hover {
+    background-color: #a30000;
+  }
+
+  .confirm-container a:hover {
+    background-color: #999;
+  }
+</style>
+
+<div class="confirm-container">
+  <h2>¿Estás seguro que quieres borrar "{{ configuracion.nombre_personalizado }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+    <a href="{% url 'mis_configuraciones' %}">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,6 +1,61 @@
-<h2>Editar Configuración</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Guardar</button>
-</form>
+{% extends 'base.html' %}
+{% block title %}Editar Configuración{% endblock %}
+
+{% block content %}
+<style>
+  .edit-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 50px auto;
+  }
+
+  .edit-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #003366;
+  }
+
+  .edit-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .edit-container input,
+  .edit-container select,
+  .edit-container textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+
+  .edit-container button {
+    align-self: center;
+    background-color: #005599;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .edit-container button:hover {
+    background-color: #003366;
+  }
+</style>
+
+<div class="edit-container">
+  <h2>Editar Configuración</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+{% endblock %}

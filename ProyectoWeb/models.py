@@ -101,3 +101,4 @@ class Configuracion(models.Model):
     modelo = models.ForeignKey(Model, on_delete=models.CASCADE)
     nombre_personalizado = models.CharField(max_length=100, blank=True, null=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
+
