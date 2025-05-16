@@ -16,3 +16,25 @@ class ConfiguracionForm(forms.ModelForm):
             'modelo': 'Modelo de coche',
             'nombre_personalizado': 'Nombre personalizado',
         }
+
+class ModelForm(forms.ModelForm):
+    class Meta:
+        model = Model
+        fields = [
+            'nom',
+            'tipo',
+            'marca',
+            'interior',
+            'motor',
+            'roda',
+            'color',
+        ]
+        widgets = {
+            'nom': forms.TextInput(attrs={'class': 'form-control'}),
+            'tipo': forms.Select(attrs={'class': 'form-control'}),
+            'marca': forms.Select(attrs={'class': 'form-control'}),
+            'interior': forms.Select(attrs={'class': 'form-control'}),
+            'motor': forms.Select(attrs={'class': 'form-control'}),
+            'roda': forms.Select(attrs={'class': 'form-control'}),
+            'color': forms.Select(attrs={'class': 'form-control'}),
+        }

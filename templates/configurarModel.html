@@ -35,7 +35,7 @@
       margin-bottom: 10px;
     }
 
-    select, input[type="color"] {
+    select, input[type="color"], input[type="text"] {
       width: 100%;
       padding: 10px;
       border-radius: 5px;
@@ -97,6 +97,15 @@
 <form action="/guardar-configuracion/" method="POST">
   {% csrf_token %}
 
+  <!-- Campo oculto para pasar el ID del modelo -->
+  <input type="hidden" name="modelo_id" value="{{ modelo_id }}">
+
+  <!-- Nombre personalizado -->
+  <div class="section">
+    <h2>Nombre personalizado para tu configuración</h2>
+    <input type="text" name="nombre_personalizado" placeholder="Ponle un nombre a tu coche" required>
+  </div>
+
   <!-- Color exterior -->
   <div class="section">
     <h2>Color de la carrocería</h2>
@@ -146,7 +155,7 @@
 </form>
 
 <script>
-  // Seleccionar llantas visualment
+  // Seleccionar llantas visualmente
   const llantas = document.querySelectorAll('.llanta');
   llantas.forEach(label => {
     label.addEventListener('click', () => {

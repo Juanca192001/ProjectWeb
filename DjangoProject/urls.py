@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ProyectoWeb.views import home, configuraTuVehiculo, guardar_configuracion, audi_models, volkswagen_models, bmw_models, configurar_model
+from ProyectoWeb.views import home, configuraTuVehiculo, guardar_configuracion, audi_models, volkswagen_models, bmw_models, crear_modelo
 from User.views import login, register, logout, mis_configuraciones, editar_configuracion, borrar_configuracion
 
 
@@ -28,12 +28,12 @@ urlpatterns = [
     path('configuraTuVehiculo/', configuraTuVehiculo, name='configuraTuVehiculo'),
     path('configuraTuVehiculo/guardar/', guardar_configuracion, name='guardar_configuracion'),
     path('configuraTuVehiculo/audi/', audi_models, name='audiModels'),
-    path('configuraTuVehiculo/<str:marca>/<str:modelo>/', configurar_model, name='configurarModel'),
+    path('configuraTuVehiculo/<str:marca>/<str:modelo>/', crear_modelo, name='configurarModel'),
     path('configuraTuVehiculo/bmw/', bmw_models, name='bmwModels'),
     path('configuraTuVehiculo/volkswagen/', volkswagen_models, name='volkswagenModels'),
     path('mis-configuraciones/', mis_configuraciones, name='mis_configuraciones'),
     path('editar-configuracion/<int:pk>/', editar_configuracion, name='editar_configuracion'),
     path('borrar-configuracion/<int:pk>/', borrar_configuracion, name='borrar_configuracion'),
-
+    path('guardar-configuracion/', guardar_configuracion, name='guardar_configuracion'),
 
 ]
