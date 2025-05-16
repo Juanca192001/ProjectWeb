@@ -90,5 +90,21 @@
   </a>
 </div>
 
+<h1>Coupé disponibles</h1>
+<div class="model-grid">
+  <a href="{% url 'configurarModel' marca='bmw' modelo='2 series coupe' %}" class="model-card">
+    <img src="{% static 'imagenes/2 series coupe.png' %}" alt="2 series coupe">
+    <h2>Serie 2 coupé</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='4 series coupe' %}" class="model-card">
+    <img src="{% static 'imagenes/4 series coupe.png' %}" alt="4 series coupe">
+    <h2>Serie 4 coupé</h2>
+  </a>
+  <a href="{% url 'configurarModel' marca='bmw' modelo='6 series coupe' %}" class="model-card">
+    <img src="{% static 'imagenes/6 series coupe.png' %}" alt="6 series coupe">
+    <h2>Serie 6 coupé</h2>
+  </a>
+</div>
+
 </body>
 {% endblock %}
