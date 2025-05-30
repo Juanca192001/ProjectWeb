@@ -88,10 +88,24 @@
 </head>
 <body>
 
-<h1>Configura tu {{ modelo|upper }} ({{ marca|title }})</h1>
+<div vocab="http://schema.org/" typeof="Vehicle">
+  <h1 property="name">Configura tu {{ modelo|upper }} ({{ marca|title }})</h1>
 
-<div class="car-image">
-  <img src="{% static 'img/'|add:marca|add:'_'|add:modelo|add:'.jpg' %}" alt="Imagen del coche">
+  <div class="car-image">
+    <img src="{% static 'imagenes/'|add:marca|add:'_'|add:modelo|add:'.png' %}" alt="Imagen del coche" property="image">
+  </div>
+
+  <meta property="brand" content="{{ marca }}">
+  <meta property="model" content="{{ modelo }}">
+  <meta property="vehicleConfiguration" content="{{ modelo_id }}">
+
+    <!-- Bloc d’oferta amb el preu -->
+  <div property="offers" typeof="Offer">
+    <meta property="priceCurrency" content="EUR" />
+    <meta property="price" content="{{ modelo_obj.precio }}" />
+    <meta property="priceValidUntil" content="2025-12-31" />
+    <link property="availability" content="En Stock" />
+  </div>
 </div>
 
 <form action="/guardar-configuracion/" method="POST">

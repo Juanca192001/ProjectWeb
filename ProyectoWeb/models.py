@@ -92,6 +92,7 @@ class Model(models.Model):
         default='#FFFFFF',
         verbose_name="Color (Hexadecimal)"
     )
+    precio = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         return f"{self.marca} {self.nom} ({self.tipo})"

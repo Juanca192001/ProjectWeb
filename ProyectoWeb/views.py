@@ -37,9 +37,10 @@ def guardar_configuracion(request):
         color = request.POST.get('color')
         motor = request.POST.get('motor')
         extras = request.POST.getlist('extras')
+        precio = request.POST.get('precio')
 
         # Aquí pots guardar la configuració en la base de dades, sessió, etc.
-        print("Configuració rebuda:", marca, modelo, color, motor, extras)
+        print("Configuració rebuda:", marca, modelo, color, motor, extras, precio)
 
         # Redirigeix a la home o una pàgina de resum
         return HttpResponseRedirect(reverse('home'))
@@ -90,6 +91,7 @@ def crear_modelo(request, marca, modelo):
         'form': form,
         'marca': marca,
         'modelo': modelo,
+        'modelo_obj': modelo_obj,
         'modelo_id': modelo_obj.id,  # Aquí pasamos el id real
     }
     return render(request, 'configurarModel.html', context)
